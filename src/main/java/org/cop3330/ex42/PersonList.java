@@ -15,7 +15,7 @@ public class PersonList {
 
     @Override
     public String toString() {
-        String output = String.format("%-10s%-10s%-6s", "Last", "First", "Salary");
+        String output = String.format("%-10s%-10s%-6s\n", "Last", "First", "Salary");
         output += "--------------------------";
         for (Person p: list)
             output += "\n" + p.toString();

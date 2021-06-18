@@ -1,7 +1,6 @@
 package org.cop3330.ex41;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class PersonList {
-    ArrayList<Person> list;
+    private ArrayList<Person> list;
 
     // Construct PersonList by initializing the list
     public PersonList() {

@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Justin Parrondo
+ */
+
 package org.cop3330.ex46;
 
 import java.util.*;
@@ -6,6 +11,7 @@ public class WordCounter {
     LinkedHashMap<String, Integer> frequencyMap;
     private int sizeOfLargestWord;
 
+    // Sort the inner LinkedHashMap by its values
     void sortWordsByFrequency() {
         ArrayList<Map.Entry<String, Integer>> wordsList = new ArrayList<>(frequencyMap.entrySet());
         wordsList.sort((l1, l2) -> l2.getValue().compareTo(l1.getValue()));
@@ -16,6 +22,7 @@ public class WordCounter {
         }
     }
 
+    // Simple helper method to generate a String of n stars
     String generateStars(int n) {
         String stars = "";
         for (int i = 0; i < n; i++) {
@@ -24,6 +31,8 @@ public class WordCounter {
         return stars;
     }
 
+    // Construct the WordCounter object by using the given
+    // Scanner object to parse the input into the inner frequencyMap
     public WordCounter(Scanner in) {
         frequencyMap = new LinkedHashMap<String, Integer>();
         sizeOfLargestWord = 0;
@@ -33,9 +42,12 @@ public class WordCounter {
             int currentFrequency = frequencyMap.getOrDefault(next, 0);
             frequencyMap.put(next, currentFrequency + 1);
         }
+        // After all insertions, sort the inner LinkedHashMap
         sortWordsByFrequency();
     }
 
+    // Overrides toString to output each entry of the inner LinkedHashMap
+    // In the desired histogram stars format
     @Override
     public String toString() {
         String output = "";

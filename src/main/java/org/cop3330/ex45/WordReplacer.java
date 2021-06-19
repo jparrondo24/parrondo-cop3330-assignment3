@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Justin Parrondo
+ */
+
 package org.cop3330.ex45;
 
 import java.io.FileWriter;
@@ -9,7 +14,10 @@ public class WordReplacer {
     private String wordToFind;
     private String wordToReplace;
 
+    // Add a given line to our list of lines, processing it first
     public void addLine(String line) {
+        // Go through the given line letter by letter,
+        // replacing wordToFind with wordToReplace whenever we find it
         int counterInFindWord = 0;
         for (int i = 0; i < line.length(); i++) {
             char currChar = line.charAt(i);
@@ -27,15 +35,20 @@ public class WordReplacer {
                 counterInFindWord = 0;
             }
         }
+        // Put the processed line in the list
         lines.add(line);
     }
 
+    // Construct the WordReplacer objects by initializing the inner list
+    // for each line, and setting the necessary two variables
     public WordReplacer(String wordToFind, String wordToReplace) {
         lines = new ArrayList<>();
         this.wordToFind = wordToFind;
         this.wordToReplace = wordToReplace;
     }
 
+    // Use the given FileWriter object to print our
+    // list of processed lines to a file
     public void printToFile(FileWriter fw) throws IOException {
         if (lines.size() <= 0)
             return;

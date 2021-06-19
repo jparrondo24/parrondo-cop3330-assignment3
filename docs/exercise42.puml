@@ -12,7 +12,7 @@ class Person {
 }
 
 class PersonList {
-  -ArrayList<Person> list
+  #ArrayList<Person> list
   +addPerson(): void
   +toString(): String
 }

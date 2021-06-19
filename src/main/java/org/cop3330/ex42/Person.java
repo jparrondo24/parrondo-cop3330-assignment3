@@ -21,6 +21,6 @@ public class Person {
     // Override toString() to get each Person in the desired format
     @Override
     public String toString() {
-        return String.format("%-10s%-10s%-6s", lastName, firstName, salary);
+        return String.format("%-10s%-10s%s", firstName, lastName, salary);
     }
 }

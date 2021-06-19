@@ -1,0 +1,22 @@
+@startuml
+
+class App {
+  +main()
+}
+
+class Person {
+  -String firstName
+  -String lastName
+  -String salary
+  +toString(): String
+}
+
+class PersonList {
+  -ArrayList<Person> list
+  +addPerson(): void
+  +toString(): String
+}
+
+PersonList *-- "many" Person : contains
+
+@enduml

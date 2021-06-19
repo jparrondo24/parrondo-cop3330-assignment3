@@ -1,0 +1,22 @@
+@startuml
+
+class App {
+  +main()
+}
+
+class ProductMap {
+  -HashMap<String, Product> map
+  +containsProduct(): boolean
+  +query(): String
+}
+
+class Product {
+  +String name
+  +double price
+  +int quantity
+  +toString(): String
+}
+
+ProductMap *-- "many" Product : contains
+
+@enduml

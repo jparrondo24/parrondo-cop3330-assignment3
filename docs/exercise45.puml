@@ -1,0 +1,15 @@
+@startuml
+
+class App {
+  +main()
+}
+
+class WordReplacer {
+  -ArrayList<String> lines
+  -String wordToFind
+  -String wordToReplace
+  +addLine(): void
+  +printToFile(): void
+}
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+
+class App {
+  +main()
+}
+
+class WebsiteGenerator {
+  -String rootDirectoryPath
+  -String siteName
+  -String author
+  -boolean wantsJs
+  -boolean wantsCss
+  -String logs
+
+  #addToLog(): void
+  #generateDirectory(): void
+  #generateIndexHtml(): void
+
+  +generateWebsite(): void
+  +getLogs(): String
+}
+
+@enduml

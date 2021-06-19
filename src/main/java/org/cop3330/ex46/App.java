@@ -19,6 +19,7 @@ public class App {
         // Construct the WordCounter object by letting it use
         // the Scanner object to read the input file
         WordCounter wc = new WordCounter(in);
+
         System.out.print(wc);
     }
 }

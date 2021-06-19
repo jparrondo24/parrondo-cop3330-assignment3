@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class ProductMap {
-    HashMap<String, Product> map;
+    private HashMap<String, Product> map;
 
     // Construct the ProductMap by parsing json into the inner HashMap,
     // also initializing the necessary Product objects along the way

@@ -1,0 +1,27 @@
+@startuml
+
+class App {
+  +main()
+}
+
+class Comparable {
+  +compareTo(): int
+}
+
+class Person implements Comparable {
+  -String firstName
+  -String lastName
+  +compareTo(): int
+  +toString(): String
+}
+
+class PersonList {
+  -ArrayList<Person> list
+  +addPerson(): void
+  +sortPeople(): void
+  +toString(): String
+}
+
+PersonList *-- "many" Person : contains
+
+@enduml

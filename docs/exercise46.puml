@@ -1,0 +1,15 @@
+@startuml
+
+class App {
+  +main()
+}
+
+class WordCounter {
+  -LinkedHashMap<String, Integer> frequencyMap
+  -int sizeOfLargestWord
+  #sortWordsByFrequency(): void
+  #generateStars(): String
+  +toString()
+}
+
+@enduml

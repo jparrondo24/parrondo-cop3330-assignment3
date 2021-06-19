@@ -26,8 +26,8 @@ public class WebsiteGenerator {
     // Generate a directory given a path, logging it when finished
     void generateDirectory(String directoryPath) {
         File f = new File(directoryPath);
-        if (f.mkdirs())
-            addToLog(directoryPath + "/");
+        f.mkdirs();
+        addToLog(directoryPath + "/");
     }
 
     // Generate the index.html based in the rootDirectoryPath

@@ -16,9 +16,15 @@ public class App {
         File input = new File(classLoader.getResource("exercise46_input.txt").getFile());
         Scanner in = new Scanner(input);
 
-        // Construct the WordCounter object by letting it use
-        // the Scanner object to read the input file
-        WordCounter wc = new WordCounter(in);
+        // Initialize the WordCounter object
+        WordCounter wc = new WordCounter();
+
+        // Add all words in the file to the WordCounter
+        while (in.hasNext())
+            wc.addWord(in.next());
+
+        // Ensure the words will be sorted by frequency
+        wc.sortWordsByFrequency();
 
         System.out.print(wc);
     }

@@ -11,8 +11,9 @@ public class WordCounter {
     LinkedHashMap<String, Integer> frequencyMap;
     private int sizeOfLargestWord;
 
-    // Sort the inner LinkedHashMap by its values
+    // Sort the inner LinkedHashMap by its values (the frequency of each word)
     void sortWordsByFrequency() {
+        // Sort the inner LinkedHashMap using lambda function comparators
         ArrayList<Map.Entry<String, Integer>> wordsList = new ArrayList<>(frequencyMap.entrySet());
         wordsList.sort((l1, l2) -> l2.getValue().compareTo(l1.getValue()));
 
@@ -31,19 +32,18 @@ public class WordCounter {
         return stars;
     }
 
-    // Construct the WordCounter object by using the given
-    // Scanner object to parse the input into the inner frequencyMap
-    public WordCounter(Scanner in) {
+    // Add word to the object by adding to the inner frequencyMap
+    public void addWord(String word) {
+        sizeOfLargestWord = Math.max(sizeOfLargestWord, word.length());
+        int currentFrequency = frequencyMap.getOrDefault(word, 0);
+        frequencyMap.put(word, currentFrequency + 1);
+    }
+
+    // Construct the WordCounter object by initializing the inner
+    // frequencyMap and sizeOfLargestWord
+    public WordCounter() {
         frequencyMap = new LinkedHashMap<String, Integer>();
         sizeOfLargestWord = 0;
-        while (in.hasNext()) {
-            String next = in.next();
-            sizeOfLargestWord = Math.max(sizeOfLargestWord, next.length());
-            int currentFrequency = frequencyMap.getOrDefault(next, 0);
-            frequencyMap.put(next, currentFrequency + 1);
-        }
-        // After all insertions, sort the inner LinkedHashMap
-        sortWordsByFrequency();
     }
 
     // Overrides toString to output each entry of the inner LinkedHashMap

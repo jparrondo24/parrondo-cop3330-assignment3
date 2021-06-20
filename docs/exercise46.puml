@@ -5,10 +5,11 @@ class App {
 }
 
 class WordCounter {
-  -LinkedHashMap<String, Integer> frequencyMap
+  #LinkedHashMap<String, Integer> frequencyMap
   -int sizeOfLargestWord
   #sortWordsByFrequency(): void
   #generateStars(): String
+  +addWord(): String
   +toString()
 }
 

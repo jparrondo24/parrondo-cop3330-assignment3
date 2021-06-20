@@ -47,14 +47,15 @@ public class WordReplacer {
         this.wordToReplace = wordToReplace;
     }
 
-    // Use the given FileWriter object to print our
-    // list of processed lines to a file
-    public void printToFile(FileWriter fw) throws IOException {
+    // Return a String of all of the processed text
+    public String getWordReplacedText() {
         if (lines.size() <= 0)
-            return;
+            return "";
 
-        fw.write(lines.get(0));
+        String output = lines.get(0);
         for (int i = 1; i < lines.size(); i++)
-            fw.write("\n" + lines.get(i));
+            output += ("\n" + lines.get(i));
+
+        return output;
     }
 }

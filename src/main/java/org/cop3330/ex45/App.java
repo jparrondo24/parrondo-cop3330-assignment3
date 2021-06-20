@@ -18,7 +18,7 @@ public class App {
         Scanner in = new Scanner(input);
         FileWriter fw = new FileWriter("exercise46_output.txt");
 
-        // Initialize a WordReplacer objects, configured for the correct
+        // Initialize a WordReplacer object, configured for the correct
         // find/replace words
         WordReplacer wr = new WordReplacer("utilize", "use");
 
@@ -26,7 +26,7 @@ public class App {
         while (in.hasNextLine())
             wr.addLine(in.nextLine());
 
-        wr.printToFile(fw);
+        fw.write(wr.getWordReplacedText());
         fw.close();
     }
 }

@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Justin Parrondo
+ */
+
 package org.cop3330.ex45;
 
 import org.junit.jupiter.api.Test;
